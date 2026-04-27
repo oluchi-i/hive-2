@@ -1,0 +1,74 @@
+## Bonus Work Summary
+
+### What I implemented
+- Added a live agent monitoring demo page at `src/pages/agent-monitor.tsx`
+- Created `src/components/AgentStatusCard.tsx` for status, metrics, sparkline, and expandable details
+- Created `src/hooks/use-agent-metrics.ts` with WebSocket + polling fallback logic
+- Updated navigation in `src/App.tsx` and the home page to expose the new monitor page
+- Improved `src/pages/my-agents.tsx` card UI with better status chips and metadata layout
+
+### How to run locally
+1. Open `hive-main/hive-main/core/frontend`
+2. Run `npm install`
+3. Run `npm run dev`
+4. Open the app and navigate to `/agent-monitor`
+
+### CodeSandbox readiness
+The frontend folder is already a Vite + React + TypeScript app and can be opened in CodeSandbox once the project is committed to a GitHub repo.
+
+Suggested sandbox entry:
+- GitHub repo root: `<your-repo-url>`
+- Start in `hive-main/hive-main/core/frontend`
+
+### PR improvement ideas
+- Add a dedicated `Agent Monitoring` route with a compact dashboard
+- Surface status badges and recent activity directly in `My Agents`
+- Update the agent list cards with clearer info density and state indicators
+
+### Figma design outline
+1. Agent list screen
+   - quick summary cards for active/idle counts
+   - status chips and recent activity
+2. Monitoring dashboard
+   - selected agent panel with key metrics
+   - sparkline chart for requests over time
+   - live status indicator with fallback notice
+3. Details panel
+   - expanded metrics
+   - agent metadata and health signals
+   - action buttons for tuning or reloading the agent
+
+## PR Description
+
+**Title**: Add agent monitoring dashboard and UI improvements for agent cards
+
+**Summary**:
+- Add a new `Agent Monitor` route with a live status dashboard
+- Add reusable `AgentStatusCard` with metrics, status indicator, sparkline, and expandable details
+- Add `useAgentMetrics` hook with WebSocket streaming and polling fallback
+- Improve `My Agents` page with clearer status chips and more compact card metadata
+- Expose the monitoring demo link from the home page
+
+**Files changed / added**:
+- `src/App.tsx`
+- `src/pages/agent-monitor.tsx`
+- `src/components/AgentStatusCard.tsx`
+- `src/hooks/use-agent-metrics.ts`
+- `src/pages/home.tsx`
+- `src/pages/my-agents.tsx`
+- `frontend-challenge/bonus-work`
+
+**Test steps**:
+1. `cd hive-main/hive-main/core/frontend`
+2. `npm install`
+3. `npm run dev`
+4. Open the app and visit `/agent-monitor`
+5. Confirm the new dashboard loads and the home page has a `Monitor agents` button
+
+**CodeSandbox setup**:
+- Import the repository into CodeSandbox from GitHub once the repo is hosted
+- Set the sandbox root to `hive-main/hive-main/core/frontend`
+- The existing `package.json` and Vite config are already compatible with CodeSandbox
+
+**Notes**:
+- This workspace currently does not contain a `.git` directory, so a PR must be created after the project is initialized or pushed to a GitHub repo.
